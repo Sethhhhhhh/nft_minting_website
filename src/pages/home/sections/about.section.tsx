@@ -20,7 +20,7 @@ const artists = [
 
 const About = () => {
 	return (
-		<section className="bg-[url('./about_background.png')] -mt-28 pt-28">
+		<section className="bg-[url('./about_background.png')] -mt-28 py-28">
 			<div className="container mx-auto flex gap-x-16">
 				<div className="w-full flex flex-col">
 					<h5 className="text-[#00FFA3] mb-4 uppercase">

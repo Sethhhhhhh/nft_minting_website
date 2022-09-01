@@ -28,7 +28,9 @@ const Blog: React.FC<Props> = ({ title, description, categories, date, comments,
 			className="text-left"
 			onClick={handleClick}
 		>
-			<img src={image} alt="" />
+			<div className="overflow-hidden">
+				<img className="object-cover duration-300 transition-transform hover:scale-110" src={image} alt="" />
+			</div>
 			<div className="p-8 bg-[#11181e]">
 				<div className="flex gap-x-1 mb-3">
 					{categories.map((category) => (
