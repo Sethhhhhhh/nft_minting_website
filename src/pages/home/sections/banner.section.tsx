@@ -11,7 +11,7 @@ import banner_shape_03 from "../../../assets/banner_shape_03.png";
 
 const Home = () => {
 	return (
-		<section className="bg-cover pt-40 bg-[url('./banner.jpg')]">
+		<section className="bg-cover pt-40 pb-28 bg-[url('./banner.jpg')]">
 			<div className="container mx-auto flex items-center">
 				<div className="relative py-28 w-full">
 					<span className="animate-spin-slow absolute top-[15%] w-20">
@@ -35,6 +35,7 @@ const Home = () => {
 					<div className="flex mt-10 gap-7">
 						<Counter />
 						<Button
+							black
 							border="none"
 							height="60px"
 							width="200px"

@@ -5,6 +5,7 @@ import nft_02 from "../../../assets/nft_02.png";
 import nft_03 from "../../../assets/nft_03.png";
 import nft_04 from "../../../assets/nft_04.png";
 import nft_05 from "../../../assets/nft_06.png";
+import check from "../../../assets/check.png";
 
 const steps = [
 	{
@@ -54,9 +55,10 @@ const Roadmap: React.FC = () => {
 						<div className="w-64 p-4 bg-white/5">
 							<span className="flex items-center justify-center font-bakbak w-full h-full text-[#343a3e] text-6xl bg-white/5">{` ${step.pourcent}%`}</span>
 						</div>
-						<div className="min-h-[200px] flex flex-col justify-center w-full p-4 bg-white/5">
-							<div className="mb-4">
+						<div className="flex flex-col justify-center w-full p-4 bg-white/5">
+							<div className="relative mb-4 flex justify-between">
 								<h4>{step.title}</h4>
+								<img className="absolute top-0 right-0" src={check} alt="" />
 							</div>
 							<p className="opacity-80">{step.description}</p>
 						</div>

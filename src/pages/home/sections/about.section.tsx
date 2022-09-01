@@ -1,6 +1,22 @@
+import AboutProfile from "../../../components/about_profile.component";
+
 import { ReactComponent as TitleShape } from '../../../assets/title_shape.svg';
 
-import AboutProfile from "../../../components/about_profile.component";
+import about_avatar_01 from "../../../assets/about_avatar_01.png";
+import about_avatar_02 from "../../../assets/about_avatar_02.png";
+
+const artists = [
+	{
+		name: "Berneice Tran",
+		role: "Artist",
+		image: about_avatar_01
+	},
+	{
+		name: "Leana Rosa",
+		role: "Co-Artist",
+		image: about_avatar_02
+	},
+]
 
 const About = () => {
 	return (
@@ -24,8 +40,13 @@ const About = () => {
 						<TitleShape className="inline-block ml-3 -mt-[1px]" />
 					</h5>
 					<div className="flex gap-8">
-						<AboutProfile />
-						<AboutProfile />
+						{artists.map((artist) => (
+							<AboutProfile
+								name={artist.name}
+								role={artist.role}
+								image={artist.image}
+							/>
+						))}
 					</div>
 				</div>
 			</div>

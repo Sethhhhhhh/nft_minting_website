@@ -1,3 +1,8 @@
+import { ReactComponent as BlackShape } from "../assets/black_shape.svg";
+
+import moment from 'moment';
+
+
 interface Props {
 	title: string,
 	description: string,
@@ -11,6 +16,12 @@ const Blog: React.FC<Props> = ({ title, description, categories, date, comments,
   	const handleClick = () => {
 
 	}
+
+	const formatUpdate = (updatedTimestamp:number) => {
+		const updatedDate = new Date(updatedTimestamp);
+
+		return moment(updatedDate).fromNow();
+	};
 	
 	return (
 		<button
@@ -19,16 +30,15 @@ const Blog: React.FC<Props> = ({ title, description, categories, date, comments,
 		>
 			<img src={image} alt="" />
 			<div className="p-8 bg-[#11181e]">
-				<div className="flex gap-x-2 mb-3">
+				<div className="flex gap-x-1 mb-3">
 					{categories.map((category) => (
 						<span className="uppercase font-bakbak text-[#00FFA3]">{category}</span>
 					))}
-					<span className="font-bakbak text-white/70">{`. ${new Date(date)}`}</span>
+					<span className="font-bakbak text-white/70">{`. ${formatUpdate(date)}`}</span>
 				</div>
 				<h4 className="mb-4">{title}</h4>
 				<p className="mb-4 text-white/70">{description}</p>
 			</div>
-
 		</button>
 	);
 };

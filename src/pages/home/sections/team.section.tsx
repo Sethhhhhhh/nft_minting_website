@@ -1,4 +1,8 @@
 import { ReactComponent as TitleShape } from '../../../assets/title_shape.svg';
+import { ReactComponent as BlackShape } from '../../../assets/black_shape.svg';
+import { ReactComponent as Linkedin } from '../../../assets/linkedin.svg';
+import { ReactComponent as Twitter } from '../../../assets/twitter.svg';
+import { ReactComponent as Instagram } from '../../../assets/instagram.svg';
 
 import team_01 from "../../../assets/team_01.png";
 import team_02 from "../../../assets/team_02.png";
@@ -63,10 +67,30 @@ const Team: React.FC = () => {
 			<h2 className="text-center mb-12 uppercase">Meet the crew</h2>
 			<div className="grid grid-cols-4 gap-x-6 gap-y-8">
 				{teams.map((member) => (
-					<div className="col-span-1 flex flex-col items-center justify-center bg-white/5 w-full h-[300px]">
+					<div className="relative group col-span-1 flex flex-col items-center justify-center transition-colors bg-white/5 hover:bg-white/10 w-full h-[400px]">
 						<img src={member.img} alt="" />
 						<h3 className="mt-7 mb-1 text-2xl">{member.name}</h3>
 						<span className="text-white/80">{member.role}</span>
+						
+						<BlackShape className="absolute top-2 left-2 transition-opacity opacity-0 group-hover:opacity-100" />
+						<BlackShape className="absolute top-2 right-2 rotate-90 transition-opacity opacity-0 group-hover:opacity-100" />
+						<ul className="absolute bottom-2 flex w-1/2 items-center justify-around transition-opacity opacity-0 group-hover:opacity-100">
+							<li className="p-3 bg-[#0f181d]">
+								<a href="/">
+									<Linkedin />
+								</a>
+							</li>
+							<li className="p-3 bg-[#0f181d]">
+								<a href="/">
+									<Twitter />
+								</a>
+							</li>
+							<li className="p-3 bg-[#0f181d]">
+								<a href="/">
+									<Instagram />
+								</a>
+							</li>
+						</ul>
 					</div>
 				))}
 			</div>
